@@ -1,19 +1,27 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="/img/logo.svg" alt="Kaldi logo" class="mb0 w-50"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
-
-	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
-
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
-
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
-
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
-	</ul>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {{ if eq `/` .Permalink }}active{{ end }}">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item {{ if eq `/products/` .Permalink }}active{{ end }}">
+                <a class="nav-link" href="/products">Products</a>
+            </li>
+            <li class="nav-item {{ if eq `/values/` .Permalink }}active{{ end }}">
+                <a class="nav-link" href="/values">Values</a>
+            </li>
+            <li class="nav-item {{ if eq `/post/` .Permalink }}active{{ end }}">
+                <a class="nav-link" href="/post">Blog</a>
+            </li>
+            <li class="nav-item {{ if eq `/contact/` .Permalink }}active{{ end }}">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
 </nav>
